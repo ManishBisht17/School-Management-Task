@@ -9,6 +9,7 @@ The **School Management API** allows users to manage schools, retrieve school da
 - 📌 **Sort schools** based on proximity using latitude and longitude.
   
   ##<b>env</b>
+  
 DB_HOST=localhost,
 DB_USER=user_name,
 DB_PASSWORD=your_password,
