@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "2fdeaa39-a4e1-42f4-80b2-9d4fe494bb9d",
+		"name": "SCHOOL MANAGEMENT",
+		"description": "This API allows users to manage schools by:\n\n- Fetching a list of schools sorted by proximity to the user's location.\n    \n- Adding new schools to the database.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35333798"
+	},
+	"item": [
+		{
+			"name": "GET SCHOOLS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/listSchools?latitude=40.7128&longitude=-4.0060",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"listSchools"
+					],
+					"query": [
+						{
+							"key": "latitude",
+							"value": "40.7128"
+						},
+						{
+							"key": "longitude",
+							"value": "-4.0060"
+						}
+					]
+				},
+				"description": "1. Fetches all schools from the database.\n    \n2. Accepts query parameters:\n    \n    - `latitude`: User's latitude.\n        \n    - `longitude`: User's longitude.\n        \n3. Returns a sorted list of schools based on proximity."
+			},
+			"response": []
+		},
+		{
+			"name": "ADD SCHOOL",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"School E\",\r\n    \"address\":\"address 5\",\r\n    \"latitude\":100.15,\r\n    \"longitude\":105.22\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/addSchool",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"addSchool"
+					]
+				},
+				"description": "1. Adds a new school to the database.\n    \n2. Requires school details in the request body.\n    \n3. Returns a sorted list of schools based on proximity."
+			},
+			"response": []
+		}
+	]
+}
