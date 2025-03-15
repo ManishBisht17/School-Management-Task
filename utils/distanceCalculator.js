@@ -2,15 +2,15 @@ function toRadians(degrees) {
   return degrees * (Math.PI / 180);
 }
 
-function calculateDistance(lat1, lon1, lat2, lon2) {
+function calculateDistance(userLat, uerLon, schoolLat, schoolLon) {
   const R = 6371;
-  const dLat = toRadians(lat2 - lat1);
-  const dLon = toRadians(lon2 - lon1);
+  const dLat = toRadians(schoolLon - userLat);
+  const dLon = toRadians(schoolLat - uerLon);
 
   const a =
     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    Math.cos(toRadians(lat1)) *
-      Math.cos(toRadians(lat2)) *
+    Math.cos(toRadians(userLat)) *
+      Math.cos(toRadians(schoolLat)) *
       Math.sin(dLon / 2) *
       Math.sin(dLon / 2);
 
